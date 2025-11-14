@@ -1,4 +1,4 @@
-# California Standardized Ideological Index (and associated metrics)
+## California Standardized Ideological Index (and associated metrics)
 
 This repo contains all the code for the CSII metric, and associated metrics like VAIR.
 
