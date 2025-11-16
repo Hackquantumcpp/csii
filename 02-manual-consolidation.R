@@ -80,6 +80,8 @@ for (cand in pres_cands) {
 madera_res_24 <- madera_res_24 %>% mutate(
   SRPREC_KEY = paste0("06039", srprec),
   G24POth = PRSPAF01 + PRSGRN01 + PRSAIP01 + PRSLIB01
+) %>% mutate(
+  G24PTot = G24PDem + G24PRep + G24POth
 )
 
 madera_res <- madera_res_24 %>% inner_join(cons, join_by('SRPREC_KEY'))
