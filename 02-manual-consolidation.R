@@ -5,6 +5,7 @@ library(foreign)
 res_22 <- read_csv('data/state_g22_sov_data_by_g22_srprec.csv')
 cw_22 <- read_csv('crosswalk/state_g22_sr_blk_map.csv')
 cw_24 <- read_csv('crosswalk/state_g24_sr_blk_map.csv')
+demo <- read_csv('demographic_data/state_CVAP_with_DOJ_2019-2023_by_2020_Blocks.csv')
 
 res_22 <- res_22 %>% select('SRPREC_KEY', starts_with('PR_'))
 
@@ -25,6 +26,8 @@ for (pr in props) {
   }
 }
 
+demo <- demo %>% rename(BLOCK_KEY = BLOCK20)
+
 cols <- c(
   "PR_1_N", "PR_1_Y", "PR_26_N", "PR_26_Y",
   "PR_27_N", "PR_27_Y", "PR_28_N", "PR_28_Y",
@@ -32,11 +35,16 @@ cols <- c(
   "PR_31_N", "PR_31_Y", "PR_1_TOT", "PR_26_TOT",
   "PR_27_TOT", "PR_28_TOT", "PR_29_TOT", "PR_30_TOT", "PR_31_TOT"
 )
+
 cons <- cons %>%
   group_by(BLOCK_KEY) %>%
   summarise(across(all_of(cols), sum), .groups = "drop")
 
 cons <- cons %>% right_join(cw_24, join_by(BLOCK_KEY))
+
+cols <- c(cols, colnames(demo)[-(1)])
+
+cons <- cons %>% left_join(demo, join_by(BLOCK_KEY))
 
 for (pr in props) {
   for (suf in suffixes) {
