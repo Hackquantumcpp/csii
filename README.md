@@ -4,4 +4,4 @@ This repo contains all the code for the CSII metric, and associated metrics like
 
 ### Data Acknowldgement
 
-Election results from [MetCalfJ](https://github.com/21MetcalfJ/2024Precincts/tree/main) and [Statewide Database](https://statewidedatabase.org/election.html). Precinct data and shapefiles from [MetCalfJ](https://github.com/21MetcalfJ/2024Precincts/tree/main). Crosswalk sheet for manual consolidation from [Statewide Database](https://statewidedatabase.org/election.html).
+Election results and precinct shapefiles from [MetCalfJ](https://github.com/21MetcalfJ/2024Precincts/tree/main) and [Statewide Database](https://statewidedatabase.org/election.html). Crosswalk sheet for manual consolidation and ACS demographic data from [Statewide Database](https://statewidedatabase.org/election.html).
