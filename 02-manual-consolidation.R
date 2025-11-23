@@ -44,6 +44,8 @@ cons <- cons %>% right_join(cw_24, join_by(BLOCK_KEY))
 
 cols <- c(cols, colnames(demo)[-(1)])
 
+cvap_cols <- c("NH_CVAP_23", "Hsp_CVAP_23")
+
 cons <- cons %>% left_join(demo, join_by(BLOCK_KEY))
 
 for (pr in props) {
@@ -95,5 +97,9 @@ madera_res_24 <- madera_res_24 %>% mutate(
 madera_res <- madera_res_24 %>% inner_join(cons, join_by('SRPREC_KEY'))
 
 res <- bind_rows(res, madera_res)
+
+res <- res %>% mutate(
+  CVAP_23 = NH_CVAP_23 + Hsp_CVAP_23
+)
 
 write_csv(res, "transformed_data/all_results.csv")
