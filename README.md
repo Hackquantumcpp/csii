@@ -4,4 +4,4 @@ This repo contains all the code for the CSII and VAIR metrics.
 
 ### Data Acknowldgement
 
-Election results and precinct shapefiles from [MetCalfJ](https://github.com/21MetcalfJ/2024Precincts/tree/main) and [Statewide Database](https://statewidedatabase.org/election.html). Crosswalk sheet for manual consolidation and ACS demographic data from [Statewide Database](https://statewidedatabase.org/election.html).
+Election results and precinct shapefiles from [Josh Metcalf](https://github.com/21MetcalfJ/2024Precincts/tree/main) and [Statewide Database](https://statewidedatabase.org/election.html). Crosswalk sheet for manual consolidation and ACS demographic data from [Statewide Database](https://statewidedatabase.org/election.html).
